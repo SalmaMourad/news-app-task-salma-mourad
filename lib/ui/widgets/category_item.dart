@@ -28,7 +28,7 @@ class CategoryItem extends StatelessWidget {
         width: double.infinity,
         margin: const EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
-          color: AppColors.blackColor,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
@@ -48,25 +48,27 @@ class CategoryItem extends StatelessWidget {
 
             Expanded(
                 child: buildCategoryText(
-                    width, height)), // Left-aligned text for odds
+                    width, height,context)), // Left-aligned text for odds
           ],
         ),
       ),
     );
   }
 
-  Widget buildCategoryText(double width, double height) {
+  Widget buildCategoryText(double width, double height, BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           category.name,
-          style: const TextStyle(color: AppColors.whiteColor, fontSize: 30),
+          style: Theme.of(context).textTheme.bodyLarge,
+          // style: const TextStyle(color: AppColors.white, fontSize: 30),
         ),
         SizedBox(height: height * 0.04),
         buildViewAllContainer(
           width,
           height,
+          context,
         ),
       ],
     );
@@ -75,34 +77,32 @@ class CategoryItem extends StatelessWidget {
   Container buildViewAllContainer(
     double width,
     double height,
+    BuildContext context,
   ) {
     return Container(
       width: width * 0.40,
       height: height * 0.06,
       decoration: BoxDecoration(
-        color: AppColors.greyColor,
+        color: AppColors.grey,
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
         textDirection: index % 2 == 0 ? TextDirection.ltr : TextDirection.rtl,
         children: [
           const Spacer(),
-          const Text(
+           Text(
             "View All",
-            style: TextStyle(
-                color: AppColors.whiteColor,
-                fontSize: 24,
-                fontWeight: FontWeight.w500),
+            style: Theme.of(context).textTheme.labelLarge
           ),
           const Spacer(),
           CircleAvatar(
             radius: 25,
-            backgroundColor: AppColors.whiteColor,
+            backgroundColor: AppColors.white,
             child: Icon(
               index % 2 == 0
                   ? Icons.arrow_forward_ios_rounded
                   : Icons.arrow_back_ios_rounded,
-              color: AppColors.blackColor,
+              color: AppColors.black,
             ),
           )
         ],

@@ -27,6 +27,7 @@ class _NewssourcesviewState extends State<Newssourcesview> {
       child: Column(
         children: [
           TabBar(
+            labelColor: Theme.of(context).primaryColor,
             isScrollable: true,
             tabs: buildTabs(widget.sources),
             onTap: (index) {
@@ -63,7 +64,7 @@ class _NewssourcesviewState extends State<Newssourcesview> {
         .map((source) => Tab(
               child: Text(
                 source.name ?? "",
-                style: const TextStyle(color: Colors.black, fontSize: 20),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ))
         .toList();

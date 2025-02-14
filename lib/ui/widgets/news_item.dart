@@ -14,7 +14,7 @@ class NewsItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-            color:Colors.black,
+            color:Theme.of(context).primaryColor,
             width: 1,
         ),
       ),
@@ -33,18 +33,20 @@ class NewsItem extends StatelessWidget {
           ),),
           Text("${article.title}",
           textAlign: TextAlign.start,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),),
+          style: Theme.of(context).textTheme.bodyMedium
+          // TextStyle(
+          //   fontSize: 16,
+          //   fontWeight: FontWeight.bold,
+          // ),
+          ),
           Row(
             children: [
               Expanded(child: Text("${article.author}",
               maxLines: 1,
-              style: TextStyle(
-              ),)),
+              style: Theme.of(context).textTheme.labelSmall
+              )),
               Expanded(child: Text("${article.publishedAt}",
-              textAlign: TextAlign.end,
+              textAlign: TextAlign.end,style: Theme.of(context).textTheme.labelSmall,
               )),
             ],
           )

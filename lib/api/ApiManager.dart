@@ -35,7 +35,7 @@ class ApiManager{ // singleton
   Future<SourcesResponse?> getNewsSources(String category)async{
     var response = await _dio.get("/v2/top-headlines/sources",
     queryParameters: {
-      "apiKey":"5909ae28122a471d8b0c237d5989cb73",
+      "apiKey":"4bbb9e6d66614137aa67978c62cefaa7",//5909ae28122a471d8b0c237d5989cb73
       "category" : category
     });
     var sourcesResponse = SourcesResponse.fromJson(response.data);
@@ -45,7 +45,7 @@ class ApiManager{ // singleton
   Future<NewsResponse?> getNews(String sourceId)async{
     var response = await _dio.get("/v2/everything",
     queryParameters: {
-      "apiKey":"5909ae28122a471d8b0c237d5989cb73",
+      "apiKey":"4bbb9e6d66614137aa67978c62cefaa7",
       "sources" : sourceId
     });
     var newsResponse = NewsResponse.fromJson(response.data);
