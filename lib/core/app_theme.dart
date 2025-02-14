@@ -6,15 +6,30 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: AppColors.white,
       // dividerColor: AppColors.purple,
-      primaryColor: AppColors.black,//,
+      primaryColor: AppColors.black, //,
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.white,
         foregroundColor: AppColors.black,
         centerTitle: true,
         elevation: 0,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.white, // Button background color
+          foregroundColor: AppColors.black, // Text color
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       textTheme: const TextTheme(
-
+        displayLarge: TextStyle(color: AppColors.white, fontSize: 15),
+        // fontWeight: FontWeight.w500),
         bodyLarge: TextStyle(
             color: AppColors.white, fontSize: 25, fontWeight: FontWeight.w500),
         bodyMedium: TextStyle(
@@ -50,43 +65,52 @@ class AppTheme {
                   fontWeight: FontWeight.bold,
                   fontSize: 20))),
       inputDecorationTheme: InputDecorationTheme(
-          prefixIconColor: AppColors.grey,
-          suffixIconColor: AppColors.grey,
-          hintStyle: const TextStyle(
-              fontSize: 16, color: AppColors.grey, fontWeight: FontWeight.w500),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-   
-          ));
-
-
-
-
-
-
-
+        prefixIconColor: AppColors.grey,
+        suffixIconColor: AppColors.grey,
+        hintStyle: const TextStyle(
+            fontSize: 16, color: AppColors.grey, fontWeight: FontWeight.w500),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+      ));
 
   static ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: AppColors.black,
-      primaryColor: AppColors.white,//,
+      primaryColor: AppColors.white, //,
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.black,
         foregroundColor: AppColors.white,
         centerTitle: true,
         elevation: 0,
       ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.black, // Button background color
+          foregroundColor: AppColors.white, // Text color
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          textStyle: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       textTheme: const TextTheme(
-
+        displayLarge: TextStyle(
+          color: AppColors.black, fontSize: 15,
+          // fontWeight: FontWeight.w300
+        ),
         bodyLarge: TextStyle(
             color: AppColors.black, fontSize: 25, fontWeight: FontWeight.w500),
         bodyMedium: TextStyle(
@@ -100,7 +124,6 @@ class AppTheme {
         labelSmall: TextStyle(
             color: AppColors.grey, fontSize: 10, fontWeight: FontWeight.bold),
       ),
-    
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           backgroundColor: AppColors.white,
@@ -120,25 +143,21 @@ class AppTheme {
                   fontWeight: FontWeight.bold,
                   fontSize: 20))),
       inputDecorationTheme: InputDecorationTheme(
-          prefixIconColor: AppColors.grey,
-          suffixIconColor: AppColors.grey,
-          hintStyle: const TextStyle(
-              fontSize: 16, color: AppColors.grey, fontWeight: FontWeight.w500),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
-            borderSide: const BorderSide(color: AppColors.grey, width: 1),
-          ),
-        
-          ));
-
-
-
+        prefixIconColor: AppColors.grey,
+        suffixIconColor: AppColors.grey,
+        hintStyle: const TextStyle(
+            fontSize: 16, color: AppColors.grey, fontWeight: FontWeight.w500),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16),
+          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+        ),
+      ));
 }
