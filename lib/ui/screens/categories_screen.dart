@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:news_app_c13/core/prov.dart';
+import 'package:news_app_c13/core/theme_provider.dart';
 import 'package:news_app_c13/data/models/category.dart';
 import 'package:news_app_c13/ui/widgets/category_item.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../widgets/drawer.dart';
+
 
 class CategoriesScreen extends StatelessWidget {
   static const routeName = '/categories';
@@ -13,7 +18,7 @@ class CategoriesScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
 
     return Scaffold(
-      drawer: const Drawer(),
+      drawer:  AppDrawer(),
       appBar: AppBar(
         actions: [
           IconButton(
@@ -39,8 +44,8 @@ class CategoriesScreen extends StatelessWidget {
             },
           ),
         ],
-        title: const Text(
-          'Home',
+        title:  Text(
+          AppLocalizations.of(context)!.home,
           // style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
@@ -54,7 +59,7 @@ class CategoriesScreen extends StatelessWidget {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
             children: [
                Text(textAlign: TextAlign.start,
-                "Good Morning \nHere is Some News For You",
+                AppLocalizations.of(context)!.welcomeTitle,
                 style: Theme.of(context).textTheme.labelLarge,
                 // style: TextStyle(
                 //     color: Colors.black,

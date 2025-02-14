@@ -13,6 +13,9 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   cached_network_image: ^3.4.1
   provider: ^6.1.2
+  flutter_localizations:
+    sdk: flutter
+  intl: any  # Use a specific version for stability
 
 dev_dependencies:
   flutter_test:
@@ -20,6 +23,68 @@ dev_dependencies:
   flutter_lints: ^3.0.0
 
 flutter:
-  assets:
-    - assets/images/
+  generate: true  # ✅ Enables Flutter localization file generation
   uses-material-design: true
+  assets:
+    - assets/images/  # ✅ Ensure this folder exists in your project
+
+
+# name: news_app_c13
+# description: "A new Flutter project."
+# publish_to: 'none'
+# version: 0.1.0
+
+# environment:
+#   sdk: '>=3.3.0 <4.0.0'
+
+# dependencies:
+#   flutter:
+#     sdk: flutter
+#   dio: ^5.8.0+1
+#   pretty_dio_logger: ^1.4.0
+#   cached_network_image: ^3.4.1
+#   provider: ^6.1.2
+#   flutter_localizations:
+#     sdk: flutter
+#   intl: ^0.19.0  # Use a specific version
+#   flutter_gen: ^5.9.0
+
+# dev_dependencies:
+#   flutter_test:
+#     sdk: flutter
+#   flutter_lints: ^3.0.0
+
+# flutter:
+#   generate: true
+#   uses-material-design: true
+#   assets:
+#     - assets/images/  # Ensure this directory exists
+
+# # name: news_app_c13
+# # description: "A new Flutter project."
+# # publish_to: 'none'
+# # version: 0.1.0
+
+# # environment:
+# #   sdk: '>=3.3.0 <4.0.0'
+
+# # dependencies:
+# #   flutter:
+# #     sdk: flutter
+# #   dio: ^5.8.0+1
+# #   pretty_dio_logger: ^1.4.0
+# #   cached_network_image: ^3.4.1
+# #   provider: ^6.1.2
+# #   flutter_localizations:
+# #     sdk: flutter
+# #   intl: any
+
+# # dev_dependencies:
+# #   flutter_test:
+# #     sdk: flutter
+# #   flutter_lints: ^3.0.0
+
+# # flutter:
+# #   assets:
+# #     - assets/images/
+# #   uses-material-design: true

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app_c13/core/app_colors.dart';
 import 'package:news_app_c13/data/models/category.dart';
 import 'package:news_app_c13/ui/screens/home_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CategoryItem extends StatelessWidget {
   final CategoryModel category;
@@ -60,7 +61,7 @@ class CategoryItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          category.name,
+          category.name as String,
           style: Theme.of(context).textTheme.bodyLarge,
           // style: const TextStyle(color: AppColors.white, fontSize: 30),
         ),
@@ -91,7 +92,7 @@ class CategoryItem extends StatelessWidget {
         children: [
           const Spacer(),
            Text(
-            "View All",
+            AppLocalizations.of(context)!.viewAll,
             style: Theme.of(context).textTheme.labelLarge
           ),
           const Spacer(),
