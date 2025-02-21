@@ -4,6 +4,8 @@ import 'package:news_app_c13/data/models/sourceResponse/Source.dart';
 import 'package:news_app_c13/ui/widgets/LoadingWidget.dart';
 import 'package:news_app_c13/ui/widgets/news_list_view.dart';
 
+import '../../search/search_screen.dart';
+
 class Newssourcesview extends StatefulWidget {
   List<Source> sources;
   Newssourcesview(this.sources, {super.key});
@@ -26,6 +28,17 @@ class _NewssourcesviewState extends State<Newssourcesview> {
       length: widget.sources.length,
       child: Column(
         children: [
+      //     IconButton(
+      //         onPressed: () {Navigator.pushNamed(
+      //   context,
+      //   SearchScreen.routeName,
+      //   // arguments: category,
+      // );},
+              // icon: const Icon(
+              //   Icons.search,
+              //   size: 30,
+              // )
+              // ),
           TabBar(
             labelColor: Theme.of(context).primaryColor,
             isScrollable: true,

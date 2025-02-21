@@ -9,6 +9,8 @@ import 'package:news_app_c13/ui/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'search/search_screen.dart';
 // import '.dart_tool\flutter_gen\gen_l10n\app_localizations.dart';
 // import '../generated/l10n.dart';
 
@@ -45,12 +47,13 @@ class MainApp extends StatelessWidget {
         Locale('ar'), // arabic
       ],
       // locale: languageProvider.locale,
-      locale:Locale('ar'),
+      locale:Locale('en'),
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       // themeMode: ThemeMode.dark,
       themeMode: themeProvider.themeMode,
       routes: {
+        SearchScreen.routeName:(context)=>  SearchScreen(),
         CategoriesScreen.routeName: (context) => const CategoriesScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
       },

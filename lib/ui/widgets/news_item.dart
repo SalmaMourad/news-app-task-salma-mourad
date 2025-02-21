@@ -1,3 +1,5 @@
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_c13/core/app_colors.dart';
@@ -21,7 +23,7 @@ class NewsItem extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20)),
-              padding: EdgeInsets.only(left: 8, right: 8,top: 14),
+              padding: EdgeInsets.only(left: 8, right: 8, top: 14),
               // height: 250,
               height: MediaQuery.of(context).size.height * 0.55,
 
@@ -38,8 +40,7 @@ class NewsItem extends StatelessWidget {
                         fit: BoxFit.cover,
                         placeholder: (context, url) =>
                             Center(child: CircularProgressIndicator()),
-                        errorWidget: (context, url, error) =>
-                            Icon(Icons.error),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                       ),
                     ),
                     SizedBox(
@@ -55,8 +56,24 @@ class NewsItem extends StatelessWidget {
                     ),
                     ElevatedButton(
                       child: const Text('View Full Article'),
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () async {
+                        final Uri url = Uri.parse(article.url ?? "");
+                        if (await canLaunchUrl(url)) {
+                          await launchUrl(url,
+                              mode: LaunchMode.externalApplication);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                                content: Text("Could not open the article")),
+                          );
+                        }
+                      },
                     ),
+
+                    // ElevatedButton(
+                    //   child: const Text('View Full Article'),
+                    //   onPressed: () => Navigator.pop(context),
+                    // ),
                   ],
                 ),
               ),
